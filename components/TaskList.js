@@ -6,6 +6,22 @@ export default function TaskList() {
     const [newDescription, setNewDescription] = useState('');
     const [editingIndex, setEditingIndex] = useState(null);
 
+    // Add task
+    const addTask = () => {
+        if (newTitle.trim() === '') return;
+
+        const newTask = {
+            id: Data.now(),
+            title: newTitle,
+            description: newDescription,
+            completed: false,
+        };
+
+        setTasks([...tasks, newTask]);
+        setNewTitle('');
+        setNewDescription('');
+    };
+
   
 }
   
