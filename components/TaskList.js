@@ -22,6 +22,11 @@ export default function TaskList() {
         setNewDescription('');
     };
 
-  
+    // Delete task
+    const deleteTask = (id) => {
+        const updatedTasks = tasks.filter(task => task.id !== id);
+        setTasks(updatedTasks);
+    };
+    
 }
   
