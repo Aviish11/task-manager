@@ -46,5 +46,41 @@ export default function TaskList() {
     setNewTitle('');
     setNewDescription('');
     };
+
+    return (
+        <div>
+          <h2>Task Manager</h2>
+          <input
+            type="text"
+            placeholder="Task title"
+            value={newTitle}
+            onChange={(e) => setNewTitle(e.target.value)}
+          />
+          <br />
+          <input
+            type="text"
+            placeholder="Task description"
+            value={newDescription}
+            onChange={(e) => setNewDescription(e.target.value)}
+          />
+          <br />
+          {editingIndex === null ? (
+            <button onClick={addTask}>Add Task</button>
+          ) : (
+            <button onClick={saveEdit}>Save Changes</button>
+          )}
+    
+          <ul>
+            {tasks.map((task, index) => (
+              <li key={task.id}>
+                <strong>{task.title}</strong>: {task.description}
+                <br />
+                <button onClick={() => startEditing(index)}>Edit</button>
+                <button onClick={() => deleteTask(task.id)}>Delete</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
 }
   
