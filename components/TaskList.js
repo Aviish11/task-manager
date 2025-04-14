@@ -28,11 +28,23 @@ export default function TaskList() {
         setTasks(updatedTasks);
     };
 
-    // Edit task
+    // Edit task //
+
     const startEditing = (index) => {
         setEditingIndex(index);
         setNewTitle(tasks[index].title);
         setNewDescription(tasks[index].description);
+    };
+
+    // Save edited task
+    const saveEdit = () => {
+        const updatedTasks = [...tasks];
+        updatedTasks[editingIndex].title = newTitle;
+        updatedTasks[editingIndex].description = newDescription;
+    setTasks(updatedTasks);
+    setEditingIndex(null);
+    setNewTitle('');
+    setNewDescription('');
     };
 }
   
