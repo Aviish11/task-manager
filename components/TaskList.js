@@ -27,6 +27,12 @@ export default function TaskList() {
         const updatedTasks = tasks.filter(task => task.id !== id);
         setTasks(updatedTasks);
     };
-    
+
+    // Edit task
+    const startEditing = (index) => {
+        setEditingIndex(index);
+        setNewTitle(tasks[index].title);
+        setNewDescription(tasks[index].description);
+    };
 }
   
