@@ -12,6 +12,7 @@ const About = () => {
         <p>This app was created to help users manage their daily tasks efficiently.</p>
         <p>Built using Next.js and the Todoist API.</p>
         <p>Built by Veevek Auckloo, Naslihan Mohammed Ayoub and Oluwaseun Akinola</p>
+        <p></p>
       </main>
       <Footer />
     </div>
