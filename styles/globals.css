@@ -72,7 +72,8 @@ nav a:hover {
 /* Buttons */
 .add-btn,
 .edit-btn,
-.delete-btn {
+.delete-btn,
+.send-btn {
   padding: 10px 16px;
   border: none;
   border-radius: 5px;
@@ -137,4 +138,38 @@ nav a:hover {
   border-radius: 5px;
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.about{
+  margin-top: 100px;
+}
+
+.contact-form{
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.form-group label {
+  width: 100px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.send-btn {
+  background-color: #238636;
+  ;
+  color: white;
 }
