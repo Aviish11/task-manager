@@ -1,9 +1,20 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TaskList from '../components/TaskList';
-import Calendar from '../components/Calendar';
-import Weather from '../components/Weather';
+// import Calendar from '../components/Calendar';
+// import Weather from '../components/Weather';
+
+const Calendar = dynamic(() => import('../components/Calendar'), {
+  ssr: false,
+  loading: () => <p> Loading calendar.. </p>
+});
+
+const Weather = dynamic(() => import('../components/Weather'), {
+  ssr: false,
+  loading: () => <p> Loading weather.. </p>
+});
 
 const Home = () => {
   return (
@@ -16,7 +27,7 @@ const Home = () => {
         </div>
 
         <h1>Welcome to Task Manager</h1>
-        <p>This is a simple app to manage your daily tasks efficiently.</p>
+        <p>To help users easily track, add, edit, and manage their daily tasks in a simple app.</p>
 
         <TaskList />
       </main>
